@@ -39,7 +39,7 @@ public class CommissionService {
 		}
 	}
 
-	public Money calculateProvinceSum(Wojewodztwo wojewodztwo) throws SQLException {
+	public Money calculateProvinceSum(Wojewodztwo wojewodztwo, double fxRate) throws SQLException {
 		Money provinceCommissionPln = Money.of(CurrencyUnit.of("PLN"), 0.0);
 
 		List<CommissionEntity> commissions = commissionDao.select(new CommissionFilter(wojewodztwo, null));
@@ -48,7 +48,7 @@ public class CommissionService {
 		}
 
 		Money provinceCommissionEur = provinceCommissionPln.convertedTo(CurrencyUnit.of("EUR"),
-				BigDecimal.valueOf(1 / 4.38639), RoundingMode.HALF_UP);
+				BigDecimal.valueOf(fxRate), RoundingMode.HALF_UP);
 
 		log.info("Prowizja w wojewodztwie " + wojewodztwo.getCode() + " wynosi " + provinceCommissionPln + " lub "
 				+ provinceCommissionEur);

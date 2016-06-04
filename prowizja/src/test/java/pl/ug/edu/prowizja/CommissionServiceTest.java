@@ -90,7 +90,7 @@ public class CommissionServiceTest extends TestCase {
 		commissionService.calculateCommission(policyNumber1, Wojewodztwo.MAZOWIECKIE);
 		commissionService.calculateCommission(policyNumber2, Wojewodztwo.MAZOWIECKIE);
 
-		Money sum = commissionService.calculateProvinceSum(Wojewodztwo.MAZOWIECKIE);
+		Money sum = commissionService.calculateProvinceSum(Wojewodztwo.MAZOWIECKIE, 1/4.38639);
 
 		assertNotNull(sum);
 		assertEquals(Money.of(CurrencyUnit.of("PLN"), 85000), sum);

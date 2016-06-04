@@ -5,7 +5,7 @@ import pl.ug.edu.prowizja.domain.core.EnumUtil;
 
 public enum Wojewodztwo implements EnumByCodeString<String> {
 	
-	POMORSKIE, MAZOWIECKIE;
+	POMORSKIE, MAZOWIECKIE, MALOPOLSKIE;
 
 	public String getCode() {
 		return this.name();
