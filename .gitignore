@@ -1,4 +1,5 @@
-target/
-.classpath
-.project
-.settings/
+prowizja/target/
+prowizja/.classpath
+prowizja/.project
+prowizja/.settings/
+helloWorld/bin
